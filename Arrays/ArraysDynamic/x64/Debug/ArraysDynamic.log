@@ -1,0 +1,3 @@
+﻿  ArraysDynamic.cpp
+D:\Dropbox\CPP\SiAOD\Arrays\ArraysDynamic\ArraysDynamic.cpp(162): warning C4715: deleteElems: значение возвращается не при всех путях выполнения
+  ArraysDynamic.vcxproj -> D:\Dropbox\CPP\SiAOD\Arrays\x64\Debug\ArraysDynamic.exe

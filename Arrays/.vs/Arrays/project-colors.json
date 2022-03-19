@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d26eb88a-6c46-470e-bfff-1747a6970907": {
+      "ProjectGuid": "d26eb88a-6c46-470e-bfff-1747a6970907",
+      "DisplayName": "Arrays",
+      "ColorIndex": 0
+    },
+    "e8b6480e-6e12-4b49-a615-08166775b6ef": {
+      "ProjectGuid": "e8b6480e-6e12-4b49-a615-08166775b6ef",
+      "DisplayName": "ArraysDynamic",
+      "ColorIndex": 1
+    },
+    "40afa1a0-3548-4ffe-84b6-17dee9fd4238": {
+      "ProjectGuid": "40afa1a0-3548-4ffe-84b6-17dee9fd4238",
+      "DisplayName": "Vectors",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Прочие файлы",
+      "ColorIndex": -1
+    },
+    "00d79b67-fe98-40ce-b3a8-feff1e1ef5ba": {
+      "ProjectGuid": "00d79b67-fe98-40ce-b3a8-feff1e1ef5ba",
+      "DisplayName": "ArraysDynamic",
+      "ColorIndex": 3
+    },
+    "4883c8d6-469b-48f0-ac5e-b4e1b3d7a959": {
+      "ProjectGuid": "4883c8d6-469b-48f0-ac5e-b4e1b3d7a959",
+      "DisplayName": "ArraysStatic",
+      "ColorIndex": 4
+    },
+    "17cbea48-df96-441f-b0ac-59033794bd5f": {
+      "ProjectGuid": "17cbea48-df96-441f-b0ac-59033794bd5f",
+      "DisplayName": "Vectors",
+      "ColorIndex": 5
+    }
+  },
+  "NextColorIndex": 6
+}

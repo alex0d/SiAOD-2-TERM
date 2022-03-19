@@ -1,0 +1,3 @@
+﻿  Dynamic.cpp
+D:\Dropbox\CPP\SiAOD\Matrices\Dynamic\Dynamic.cpp(14,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Dynamic.vcxproj -> D:\Dropbox\CPP\SiAOD\Matrices\x64\Debug\Dynamic.exe

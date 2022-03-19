@@ -1,0 +1,3 @@
+﻿  Task2.cpp
+D:\Dropbox\CPP\SiAOD\Strings\Task2\Task2.cpp(50,5): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Task2.vcxproj -> D:\Dropbox\CPP\SiAOD\Strings\x64\Debug\Task2.exe

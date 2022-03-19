@@ -1,0 +1,8 @@
+# ninja log v5
+15	1206	6677516697343220	CMakeFiles/Matrices.dir/Task3/Task3.cpp.obj	a8c3b651b0705a0b
+1	1217	6677516697353201	CMakeFiles/Matrices.dir/Dynamic/Dynamic.cpp.obj	6ecef4add8a52ab4
+7	1218	6677516697432990	CMakeFiles/Matrices.dir/Static/Static.cpp.obj	46dc34af11d340ce
+19	1230	6677516697562632	CMakeFiles/Matrices.dir/Test/Test.cpp.obj	9fdcb497b9ccbef4
+6	404	6677518880912179	Matrices.exe	ca8c5dd06e8fa577
+20	850	6677519184387112	CMakeFiles/Matrices.dir/Test/Test.cpp.obj	9fdcb497b9ccbef4
+11	929	6677519185254784	CMakeFiles/Matrices.dir/Task3/Task3.cpp.obj	a8c3b651b0705a0b

@@ -1,0 +1,3 @@
+﻿  Static.cpp
+D:\Dropbox\CPP\SiAOD\Matrices\Static\Static.cpp(17,15): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Static.vcxproj -> D:\Dropbox\CPP\SiAOD\Matrices\x64\Debug\Static.exe
