@@ -3,22 +3,22 @@
 
 #include <string>
 
-struct date {
+struct Date {
     unsigned short day;
     unsigned short month;
     unsigned short year;
 };
 
-struct position {
+struct Position {
     unsigned short code;
     std::string title;
 };
 
-struct worker {
+struct Worker {
     unsigned short personal_code;
     std::string name;
     unsigned short position_code;
-    date employment;
+    Date employment;
 };
 
 #endif

@@ -8,34 +8,34 @@
 using namespace std;
 
 // Справочник по должностям
-position positions[5] = { {1, "Cleaner"},
+Position positions[5] = { {1, "Cleaner"},
                           {2, "Programmer"},
                           {3, "Project manager"},
                           {4, "The useless one"},
                           {5, "CEO"} };
 
 // Создаёт нового сотрудника, сохраняя его данные в переданную запись.
-void createWorker(worker& note);
+void createWorker(Worker& note);
 
 // Вставляет сотрудника так, чтобы запись разместилась после последней записи с такой же должностью.
-void insertWorkerByPosition(vector<worker>& table);
+void insertWorkerByPosition(vector<Worker>& table);
 
 // Возвращает код должности по её названию. Возвращает 0, если переданной должности не существует.
 unsigned short getPositionCodeByTitle(string title);
 
 // Возвращает индекс последнего работника с переданной занимаемой должностью.
-int findLastNoteWithRequiredPosition(int pos, const vector<worker>& table);
+int findLastNoteWithRequiredPosition(int pos, const vector<Worker>& table);
 
 // Заменяет у всех сотрудников код заданной должности на новый код.
 // Возвращает true при успехе, иначе false.
-bool changePositions(vector<worker>& table, string old_pos_title, string new_pos_title);
+bool changePositions(vector<Worker>& table, string old_pos_title, string new_pos_title);
 
 // Удаляет из таблицы всех сотрудников с заданной должностью. Уменьшает размер таблицы.
 // Возвращает true при успехе, иначе false.
-bool fireWorkersByPosition(vector<worker>& table, string pos_title);
+bool fireWorkersByPosition(vector<Worker>& table, string pos_title);
 
 // Выводит таблицу сотрудников в консоль.
-void showTable(const vector<worker>& table);
+void showTable(const vector<Worker>& table);
 
 int main()
 {
@@ -45,7 +45,7 @@ int main()
     int n; // Текущее количество записей о сотрудниках.
     cout << "Введите количество записей о сотрудниках: ";
     cin >> n;
-    vector<worker> table(n); // Таблица: записи о сотрудниках.
+    vector<Worker> table(n); // Таблица: записи о сотрудниках.
 
     for (int i = 0; i < n; i++) {
         cout << "\nЗаполнение данных сотрудника #" << i << "...\n";
@@ -112,7 +112,7 @@ int main()
     }
 }
 
-void createWorker(worker& note) {
+void createWorker(Worker& note) {
     cout << "Табельный номер: ";
     cin >> note.personal_code;
     cout << "Фамилия И. О.: ";
@@ -124,11 +124,11 @@ void createWorker(worker& note) {
     cin >> skipws >> note.employment.day >> note.employment.month >> note.employment.year;
 }
 
-void insertWorkerByPosition(vector<worker>& table) {
+void insertWorkerByPosition(vector<Worker>& table) {
     int n = table.size();
     table.resize(++n);
 
-    worker new_note;
+    Worker new_note;
     createWorker(new_note);
 
     int last = findLastNoteWithRequiredPosition(new_note.position_code, table);
@@ -143,7 +143,7 @@ void insertWorkerByPosition(vector<worker>& table) {
 }
 
 unsigned short getPositionCodeByTitle(string title) {
-    for (position pos : positions) {
+    for (Position pos : positions) {
         if (pos.title == title) {
             return pos.code;
         }
@@ -151,7 +151,7 @@ unsigned short getPositionCodeByTitle(string title) {
     return 0;
 }
 
-int findLastNoteWithRequiredPosition(int pos, const vector<worker>& table) {
+int findLastNoteWithRequiredPosition(int pos, const vector<Worker>& table) {
     for (int i = table.size() - 1; i >= 0; i--) {
         if (table.at(i).position_code == pos) {
             return i;
@@ -160,7 +160,7 @@ int findLastNoteWithRequiredPosition(int pos, const vector<worker>& table) {
     return -1;
 }
 
-bool changePositions(vector<worker>& table, string old_pos_title, string new_pos_title) {
+bool changePositions(vector<Worker>& table, string old_pos_title, string new_pos_title) {
     unsigned short old_pos = getPositionCodeByTitle(old_pos_title);
     unsigned short new_pos = getPositionCodeByTitle(new_pos_title);
     if (old_pos == 0 || new_pos == 0) {
@@ -174,7 +174,7 @@ bool changePositions(vector<worker>& table, string old_pos_title, string new_pos
     return true;
 }
 
-bool fireWorkersByPosition(vector<worker>& table, string pos_title) {
+bool fireWorkersByPosition(vector<Worker>& table, string pos_title) {
     unsigned short pos = getPositionCodeByTitle(pos_title);
     if (pos == 0) {
         return false;
@@ -191,7 +191,7 @@ bool fireWorkersByPosition(vector<worker>& table, string pos_title) {
     return true;
 }
 
-void showTable(const vector<worker>& table) {
+void showTable(const vector<Worker>& table) {
     for (int i = 0; i < table.size(); i++) {
         cout << "       " << setw(3) << setfill('0') << right << table.at(i).personal_code << "       |";
         cout << setw(floor((22.0 - table.at(i).name.size()) / 2)) << setfill(' ') << "";

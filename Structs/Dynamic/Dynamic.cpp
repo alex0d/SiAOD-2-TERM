@@ -7,34 +7,34 @@
 using namespace std;
 
 // Справочник по должностям
-position positions[5] = { {1, "Cleaner"},
+Position positions[5] = { {1, "Cleaner"},
                           {2, "Programmer"},
                           {3, "Project manager"},
                           {4, "The useless one"},
                           {5, "CEO"} };
 
 // Создаёт нового сотрудника, сохраняя его данные в переданную запись.
-void createWorker(worker& note);
+void createWorker(Worker& note);
 
 // Вставляет сотрудника так, чтобы запись разместилась после последней записи с такой же должностью.
-void insertWorkerByPosition(worker** table, int& n);
+void insertWorkerByPosition(Worker** table, int& n);
 
 // Возвращает код должности по её названию. Возвращает 0, если переданной должности не существует.
 unsigned short getPositionCodeByTitle(string title);
 
 // Возвращает индекс последнего работника с переданной занимаемой должностью.
-int findLastNoteWithRequiredPosition(int pos, const worker* table, int n);
+int findLastNoteWithRequiredPosition(int pos, const Worker* table, int n);
 
 // Заменяет у всех сотрудников код заданной должности на новый код.
 // Возвращает true при успехе, иначе false.
-bool changePositions(worker* table, int n, string old_pos_title, string new_pos_title);
+bool changePositions(Worker* table, int n, string old_pos_title, string new_pos_title);
 
 // Удаляет из таблицы всех сотрудников с заданной должностью. Уменьшает размер таблицы.
 // Возвращает true при успехе, иначе false.
-bool fireWorkersByPosition(worker** table, int& n, string pos_title);
+bool fireWorkersByPosition(Worker** table, int& n, string pos_title);
 
 // Выводит таблицу сотрудников в консоль.
-void showTable(const worker* table, int n);
+void showTable(const Worker* table, int n);
 
 int main()
 {
@@ -44,7 +44,7 @@ int main()
     int n; // Текущее количество записей о сотрудниках.
     cout << "Введите количество записей о сотрудниках: ";
     cin >> n;
-    worker* table = new worker[n]; // Таблица: записи о сотрудниках.
+    Worker* table = new Worker[n]; // Таблица: записи о сотрудниках.
     
     for (int i = 0; i < n; i++) {
         cout << "\nЗаполнение данных сотрудника #" << i << "...\n";
@@ -111,7 +111,7 @@ int main()
     }
 }
 
-void createWorker(worker& note) {
+void createWorker(Worker& note) {
     cout << "Табельный номер: ";
     cin >> note.personal_code;
     cout << "Фамилия И. О.: ";
@@ -123,8 +123,8 @@ void createWorker(worker& note) {
     cin >> skipws >> note.employment.day >> note.employment.month >> note.employment.year;
 }
 
-void insertWorkerByPosition(worker** table, int& n) {
-    worker* new_table = new worker[n + 1];
+void insertWorkerByPosition(Worker** table, int& n) {
+    Worker* new_table = new Worker[n + 1];
     
     // Копирование элементов в новую таблицу
     for (int i = 0; i < n; i++) { 
@@ -135,7 +135,7 @@ void insertWorkerByPosition(worker** table, int& n) {
     *table = new_table;
     n++;
 
-    worker new_note;
+    Worker new_note;
     createWorker(new_note);
 
     int last = findLastNoteWithRequiredPosition(new_note.position_code, *table, n);
@@ -150,7 +150,7 @@ void insertWorkerByPosition(worker** table, int& n) {
 }
 
 unsigned short getPositionCodeByTitle(string title) {
-    for (position pos : positions) {
+    for (Position pos : positions) {
         if (pos.title == title) {
             return pos.code;
         }
@@ -158,7 +158,7 @@ unsigned short getPositionCodeByTitle(string title) {
     return 0;
 }
 
-int findLastNoteWithRequiredPosition(int pos, const worker* table, int n) {
+int findLastNoteWithRequiredPosition(int pos, const Worker* table, int n) {
     for (int i = n - 1; i >= 0; i--) {
         if (table[i].position_code == pos) {
             return i;
@@ -167,7 +167,7 @@ int findLastNoteWithRequiredPosition(int pos, const worker* table, int n) {
     return -1;
 }
 
-bool changePositions(worker* table, int n, string old_pos_title, string new_pos_title) {
+bool changePositions(Worker* table, int n, string old_pos_title, string new_pos_title) {
     unsigned short old_pos = getPositionCodeByTitle(old_pos_title);
     unsigned short new_pos = getPositionCodeByTitle(new_pos_title);
     if (old_pos == 0 || new_pos == 0) {
@@ -181,7 +181,7 @@ bool changePositions(worker* table, int n, string old_pos_title, string new_pos_
     return true;
 }
 
-bool fireWorkersByPosition(worker** table, int& n, string pos_title) {
+bool fireWorkersByPosition(Worker** table, int& n, string pos_title) {
     unsigned short pos = getPositionCodeByTitle(pos_title);
     if (pos == 0) {
         return false;
@@ -194,7 +194,7 @@ bool fireWorkersByPosition(worker** table, int& n, string pos_title) {
             new_n++;
         }
     }
-    worker* new_table = new worker[new_n];
+    Worker* new_table = new Worker[new_n];
     for (int i = 0; i < new_n; i++) {
         new_table[i] = (*table)[i];
     }
@@ -205,7 +205,7 @@ bool fireWorkersByPosition(worker** table, int& n, string pos_title) {
     return true;
 }
 
-void showTable(const worker* table, int n) {
+void showTable(const Worker* table, int n) {
     for (int i = 0; i < n; i++) {
         cout << "       " << setw(3) << setfill('0') << right << table[i].personal_code << "       |";
         cout << setw(floor((22.0 - table[i].name.size()) / 2)) << setfill(' ') << "";
