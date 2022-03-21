@@ -19,9 +19,6 @@ position positions[5] = { {1, "Cleaner"},
 // Создаёт нового сотрудника, сохраняя его данные в переданную запись.
 void createWorker(worker& note);
 
-// Добавляет сотрудника в таблицу, изменяет её размер. Возвращает true при успехе, иначе false.
-bool addWorkerToTable(worker* table, const worker& note, int& n);
-
 // Вставляет сотрудника так, чтобы запись разместилась после последней записи с такой же должностью.
 // Возвращает true при успехе, иначе false.
 bool insertWorkerByPosition(worker* table, const worker& note, int& n);
@@ -48,22 +45,21 @@ int main()
     SetConsoleOutputCP(1251); // Задаём кодировку вывода консоли.
     SetConsoleCP(1251); // Задаём кодировку ввода консоли.
     
-    int n = 0; // Текущее количество записей о сотрудниках.
+    int n; // Текущее количество записей о сотрудниках.
     worker table[N]; // Таблица: записи о сотрудниках.
     
-    int input_n;
     cout << "Введите количество записей о сотрудниках: ";
-    cin >> input_n;
-    if (input_n > N) {
+    cin >> n;
+    if (n > N) {
         cout << "Количество записей не может быть больше 100.";
         return 1;
     }
 
     worker new_note;
-    for (int i = 0; i < input_n; i++) {
+    for (int i = 0; i < n; i++) {
         cout << "\nЗаполнение данных сотрудника #" << i << "...\n";
         createWorker(new_note);
-        addWorkerToTable(table, new_note, n);
+        table[i] = new_note;
     }
     cout << "Таблица заполнена." << endl;
 
@@ -140,22 +136,13 @@ void createWorker(worker& note) {
     cin >> skipws >> note.employment.day >> note.employment.month >> note.employment.year;
 }
 
-bool addWorkerToTable(worker* table, const worker& note, int& n) {
-    if (n + 1 > N) {
-        return false;
-    }
-    table[n] = note;
-    n++;
-    return true;
-}
-
 bool insertWorkerByPosition(worker* table, const worker& note, int& n) {
     if (n + 1 > N) {
         return false;
     }
     int pos = findLastNoteWithRequiredPosition(note.position_code, table, n);
     if (pos == -1) {
-        return addWorkerToTable(table, note, n);
+        pos = n - 1;
     }
     for (int i = pos + 1; i < n; i++) {
         table[i + 1] = table[i];
