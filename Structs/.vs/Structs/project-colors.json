@@ -15,7 +15,12 @@
       "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
       "DisplayName": "Прочие файлы",
       "ColorIndex": -1
+    },
+    "cc42f2ee-7bea-4429-aa82-6c17ab5ef4cf": {
+      "ProjectGuid": "cc42f2ee-7bea-4429-aa82-6c17ab5ef4cf",
+      "DisplayName": "Vector",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 3
 }
