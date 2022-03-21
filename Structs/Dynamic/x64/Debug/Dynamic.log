@@ -1,0 +1,4 @@
+﻿  Dynamic.cpp
+D:\Projects\SiAOD-2-TERM\Structs\Dynamic\Dynamic.cpp(211,27): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
+D:\Projects\SiAOD-2-TERM\Structs\Dynamic\Dynamic.cpp(212,25): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
+  Dynamic.vcxproj -> D:\Projects\SiAOD-2-TERM\Structs\x64\Debug\Dynamic.exe
