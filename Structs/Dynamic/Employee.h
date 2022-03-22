@@ -21,5 +21,13 @@ struct Worker {
     Date employment;
 };
 
+struct Table {
+    Table(int n) : size(n) {
+        data = new Worker[n];
+    };
+    int size;
+    Worker* data;
+};
+
 #endif
 

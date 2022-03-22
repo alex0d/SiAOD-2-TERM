@@ -14,14 +14,14 @@ Position positions[5] = { {1, "Cleaner"},
                           {4, "The useless one"},
                           {5, "CEO"} };
 
+// Возвращает код должности по её названию. Возвращает 0, если переданной должности не существует.
+unsigned short getPositionCodeByTitle(string title);
+
 // Создаёт нового сотрудника, сохраняя его данные в переданную запись.
 void createWorker(Worker& note);
 
 // Вставляет сотрудника так, чтобы запись разместилась после последней записи с такой же должностью.
 void insertWorkerByPosition(vector<Worker>& table);
-
-// Возвращает код должности по её названию. Возвращает 0, если переданной должности не существует.
-unsigned short getPositionCodeByTitle(string title);
 
 // Возвращает индекс последнего работника с переданной занимаемой должностью.
 int findLastNoteWithRequiredPosition(int pos, const vector<Worker>& table);
@@ -112,6 +112,15 @@ int main()
     }
 }
 
+unsigned short getPositionCodeByTitle(string title) {
+    for (Position pos : positions) {
+        if (pos.title == title) {
+            return pos.code;
+        }
+    }
+    return 0;
+}
+
 void createWorker(Worker& note) {
     cout << "Табельный номер: ";
     cin >> note.personal_code;
@@ -140,15 +149,6 @@ void insertWorkerByPosition(vector<Worker>& table) {
         table.at(i + 1) = table.at(i);
     }
     table.at(last + 1) = new_note;
-}
-
-unsigned short getPositionCodeByTitle(string title) {
-    for (Position pos : positions) {
-        if (pos.title == title) {
-            return pos.code;
-        }
-    }
-    return 0;
 }
 
 int findLastNoteWithRequiredPosition(int pos, const vector<Worker>& table) {

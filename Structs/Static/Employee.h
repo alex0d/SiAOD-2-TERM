@@ -21,5 +21,12 @@ struct Worker {
     Date employment;
 };
 
+struct Table {
+    Table(int n) : size(n) {};
+    int size;
+    const static int max_size = 100;
+    Worker data[max_size];
+};
+
 #endif
 

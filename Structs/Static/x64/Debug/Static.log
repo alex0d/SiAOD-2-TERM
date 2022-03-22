@@ -1,4 +1,4 @@
 ﻿  Static.cpp
-D:\Projects\SiAOD-2-TERM\Structs\Static\Static.cpp(206,27): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
-D:\Projects\SiAOD-2-TERM\Structs\Static\Static.cpp(207,25): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
+D:\Projects\SiAOD-2-TERM\Structs\Static\Static.cpp(202,27): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
+D:\Projects\SiAOD-2-TERM\Structs\Static\Static.cpp(203,25): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
   Static.vcxproj -> D:\Projects\SiAOD-2-TERM\Structs\x64\Debug\Static.exe
