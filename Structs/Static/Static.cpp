@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <string>
 #include <Windows.h>
-#include "Employee.h"
+#include "Employee_static.h"
 
 using namespace std;
 
@@ -24,6 +24,7 @@ void createWorker(Worker& note);
 bool insertWorkerByPosition(Table& table);
 
 // Возвращает индекс последнего работника с переданной занимаемой должностью.
+// Возвращает -1, если работника с такой должностью нет в таблице.
 int findLastNoteWithRequiredPosition(int pos, const Table& table);
 
 // Заменяет у всех сотрудников код заданной должности на новый код.
@@ -45,7 +46,7 @@ int main()
     int n; // Текущее количество записей о сотрудниках.
     cout << "Введите количество записей о сотрудниках: ";
     cin >> n;
-    if (n > Table::max_size) {
+    if (n > Table::MAX_SIZE) {
         cout << "Количество записей не может быть больше 100.";
         return 1;
     }
@@ -139,7 +140,7 @@ void createWorker(Worker& note) {
 }
 
 bool insertWorkerByPosition(Table& table) {
-    if (table.size + 1 > table.max_size) {
+    if (table.size + 1 > Table::MAX_SIZE) {
         return false;
     }
 

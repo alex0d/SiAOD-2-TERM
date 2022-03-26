@@ -1,6 +1,7 @@
 ﻿  Vector.cpp
-D:\Projects\SiAOD-2-TERM\Structs\Vector\Vector.cpp(128,25): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+D:\Projects\SiAOD-2-TERM\Structs\Vector\Vector.cpp(137,25): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
 D:\Projects\SiAOD-2-TERM\Structs\Vector\Vector.cpp(155,5): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
 D:\Projects\SiAOD-2-TERM\Structs\Vector\Vector.cpp(197,27): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
 D:\Projects\SiAOD-2-TERM\Structs\Vector\Vector.cpp(198,25): warning C4244: аргумент: преобразование "double" в "std::streamsize", возможна потеря данных
+  LINK : не найден или не выполнена сборка D:\Projects\SiAOD-2-TERM\Structs\x64\Debug\Vector.exe при последней инкрементной компоновке; выполняется полная компоновка
   Vector.vcxproj -> D:\Projects\SiAOD-2-TERM\Structs\x64\Debug\Vector.exe
