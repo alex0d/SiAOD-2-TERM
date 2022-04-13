@@ -1,3 +1,3 @@
 ﻿  LinkedList.cpp
-D:\Projects\SiAOD-2-TERM\LinkedList\LinkedList\LinkedList.cpp(166): warning C4715: deleteMax: значение возвращается не при всех путях выполнения
+D:\Projects\SiAOD-2-TERM\LinkedList\LinkedList\LinkedList.cpp(145): warning C4715: deleteMax: значение возвращается не при всех путях выполнения
   LinkedList.vcxproj -> D:\Projects\SiAOD-2-TERM\LinkedList\x64\Debug\LinkedList.exe
