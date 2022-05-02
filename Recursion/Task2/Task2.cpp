@@ -5,52 +5,17 @@ struct Node {
     Node* next;
 };
 
-void addNode(Node* &head, int data) {
-    if (!head) {
-        // Исходная очередь была пустая.
-        head = new Node{data, nullptr};
-        return;
-    }
+// Добавить элемент в список.
+void addNode(Node* &head, int data);
 
-    if (!head->next) {
-        head->next = new Node{data, nullptr};
-        return;
-    }
-    addNode(head->next, data);
-}
+// Удалить элемент из списка.
+void removeNode(Node* &head);
 
-void removeNode(Node* &head) {
-    if (!head) {
-        // В качестве параметра был передан nullptr.
-        return;
-    }
+// Вывод списка в консоль.
+void printQueue(const Node* head);
 
-    if (!head->next) {
-        delete head;
-        head = nullptr;
-        return;
-    }
-    Node* tmp = head->next;
-    delete head;
-    head = tmp;
-}
-
-void printQueue(const Node* head) {
-    if (!head) {
-        return;
-    }
-    std::cout << head->data << " ";
-    printQueue(head->next);
-};
-
-void deleteQueue(Node* &head) {
-    if (!head) {
-        return;
-    }
-    deleteQueue(head->next);
-    delete head;
-    head = nullptr;
-}
+// Удаление списка.
+void deleteQueue(Node* &head);
 
 int main() {
     setlocale(LC_ALL, "Russian");
@@ -104,4 +69,51 @@ int main() {
     }
     deleteQueue(head);
     return 0;
+}
+
+void addNode(Node* &head, int data) {
+    if (!head) {
+        // Исходная очередь была пустая.
+        head = new Node{data, nullptr};
+        return;
+    }
+
+    if (!head->next) {
+        head->next = new Node{data, nullptr};
+        return;
+    }
+    addNode(head->next, data);
+}
+
+void removeNode(Node* &head) {
+    if (!head) {
+        // В качестве параметра был передан nullptr.
+        return;
+    }
+
+    if (!head->next) {
+        delete head;
+        head = nullptr;
+        return;
+    }
+    Node* tmp = head->next;
+    delete head;
+    head = tmp;
+}
+
+void printQueue(const Node* head) {
+    if (!head) {
+        return;
+    }
+    std::cout << head->data << " ";
+    printQueue(head->next);
+};
+
+void deleteQueue(Node* &head) {
+    if (!head) {
+        return;
+    }
+    deleteQueue(head->next);
+    delete head;
+    head = nullptr;
 }
