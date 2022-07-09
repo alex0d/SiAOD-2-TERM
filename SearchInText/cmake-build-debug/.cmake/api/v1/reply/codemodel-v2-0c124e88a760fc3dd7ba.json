@@ -1,0 +1,101 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "Task1",
+					"jsonFile" : "directory-Task1-Debug-70284fdb760100516a72.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Task1",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "Task2",
+					"jsonFile" : "directory-Task2-Debug-9962e8d82f4b9f1ef216.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "Task2",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "SearchInText",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "Task1::@bf3946659f9d0f609193",
+					"jsonFile" : "target-Task1-Debug-087ecb47a32be2d373a3.json",
+					"name" : "Task1",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Task2::@b6c2d385f3fe2b731faa",
+					"jsonFile" : "target-Task2-Debug-fdbfc51d7124d4365b88.json",
+					"name" : "Task2",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Projects/SiAOD-2-TERM/SearchInText/cmake-build-debug",
+		"source" : "D:/Projects/SiAOD-2-TERM/SearchInText"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

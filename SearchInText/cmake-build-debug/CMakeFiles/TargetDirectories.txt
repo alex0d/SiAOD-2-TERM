@@ -1,0 +1,8 @@
+D:/Projects/SiAOD-2-TERM/SearchInText/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Projects/SiAOD-2-TERM/SearchInText/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Projects/SiAOD-2-TERM/SearchInText/cmake-build-debug/Task1/CMakeFiles/Task1.dir
+D:/Projects/SiAOD-2-TERM/SearchInText/cmake-build-debug/Task1/CMakeFiles/edit_cache.dir
+D:/Projects/SiAOD-2-TERM/SearchInText/cmake-build-debug/Task1/CMakeFiles/rebuild_cache.dir
+D:/Projects/SiAOD-2-TERM/SearchInText/cmake-build-debug/Task2/CMakeFiles/Task2.dir
+D:/Projects/SiAOD-2-TERM/SearchInText/cmake-build-debug/Task2/CMakeFiles/edit_cache.dir
+D:/Projects/SiAOD-2-TERM/SearchInText/cmake-build-debug/Task2/CMakeFiles/rebuild_cache.dir
